@@ -1,0 +1,21 @@
+{
+  "name": "aws-rds-proxy-pg",
+  "version": "1.0.0",
+  "description": "conexión lambda con proxy rds",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jomunoz075"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Jose",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.3"
+  }
+}
