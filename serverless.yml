@@ -1,4 +1,3 @@
-app: aws-rds-proxy-pg
 org: jomunoz075
 service: aws-rds-proxy-pg
 frameworkVersion: '3'
@@ -7,13 +6,24 @@ provider:
   name: aws
   runtime: nodejs14.x
   region: eu-west-3
-  stackName: service-dev
+  stage: dev
+  stackName: ${self:service}-${self:provider.stage}
 
 plugins:
-  - serverless-deployment-bucket
+   - serverless-deployment-bucket
+
 functions:
   databasepg:
     handler: handler.databasepg
+    vpc:
+      securityGroupIds:
+        - sg-01aeead570c19d9c2
+        - sg-0f2297adb013a360d
+        - sg-0dce3e27d76aac0f3
+      subnetIds:
+        - subnet-096c52fc5c7828499
+        - subnet-0cd237a900f9473a6
+        - subnet-0ad0204ab6d6bd542
     events:
       - httpApi:
           path: /databasepg
