@@ -7,7 +7,7 @@ provider:
   runtime: nodejs14.x
   region: eu-west-3
   stage: dev
-  stackName: ${self:service}-${self:provider.stage}
+  stackName: service-dev
 
 plugins:
    - serverless-deployment-bucket
