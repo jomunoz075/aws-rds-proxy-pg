@@ -1,16 +1,20 @@
+app: aws-rds-proxy-pg
 org: jomunoz075
-app: aws-test-project-serverless-cdci
 service: aws-rds-proxy-pg
 frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs14.x
+  region: eu-west-3
+  stackName: service-dev
 
+plugins:
+  - serverless-deployment-bucket
 functions:
-  hello:
-    handler: handler.hello
+  databasepg:
+    handler: handler.databasepg
     events:
       - httpApi:
-          path: /
+          path: /databasepg
           method: get

@@ -17,5 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "serverless-deployment-bucket": "^1.6.0"
   }
 }
